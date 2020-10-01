@@ -600,14 +600,14 @@ const reponse = [
 ];
 //création des variables que je recup de la page WEB
 function getValueOfType() {
-        var type = document.getElementById("type").value;
-        alert(type);
-        return type;
+        var gettype = document.getElementById("type").value;
+        alert(gettype);
+        return gettype;
 }
 function getValueOfNbre() {
-        var nbre = document.getElementById("nbre").value;
-        alert(nbre);
-        return nbre;
+        var getnbre = document.getElementById("nbre").value;
+        alert(getnbre);
+        return getnbre;
 }
 var type = getValueOfType();
 var nbre = getValueOfNbre();
@@ -652,8 +652,8 @@ function cPartiMonKiki(tableauFinal) {
         return tableauFinal;  
 }
 
-document.getElementById('phrase1').innerHTML = getValueOfType();
-document.getElementById('phrase2').innerHTML = getValueOfNbre();
+document.getElementById('phrase1').innerHTML = type;
+document.getElementById('phrase2').innerHTML = nbre;
 document.getElementById('phrase3').innerHTML = (cPartiMonKiki(tabFinal)[2]);
 document.getElementById('phrase4').innerHTML = (cPartiMonKiki(tabFinal)[3]);
 document.getElementById('phrase5').innerHTML = (cPartiMonKiki(tabFinal)[4]);
