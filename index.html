@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS perso de la page -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>DAF - #Projet 5</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h1>Projet 5 - Développeur d'Application Front-End</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <img src="img\blanc-manger-coco.png" alt="image de la boite de jeux blanc manger coco">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <p>Jeux de création de phrases aléatoire sur la base de citations du jeux Blanc Manger Coco.<br>
+                    Le principe est simple :<br>
+                    Choisir un nombre de phrases à générer<br>
+                    Sélectionner un type de phrases (1trou / 2trou / 3trou)<br>
+                    puis cliquer sur : Générer</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <form>
+                    <div class="row justify-content-around">
+                        <div class="col-3">
+                            <label>Nombre de Phrase</label>
+                            <select class="form-control" id="nbre" onchange="getValueOfNbre()">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <label>Type de Phrase</label>
+                            <select class="form-control" id="type" onchange="getValueOfType()">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin20 justify-content-around">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modalprojet" onclick="cPartiMonKiki(tableauFinal)">
+                            Générer
+                        </button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="Modalprojet" tabindex="-1" aria-labelledby="ModalProjet5" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="ModalProjet5">Citations Générée</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li id="phrase1"></li>
+                        <li id="phrase2"></li>
+                        <li id="phrase3"></li>
+                        <li id="phrase4"></li>
+                        <li id="phrase5"></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- Script du projet 5 - réalisé par Sébastien GILBERT -->
+    <script src="tableau.js"></script>
+    <!-- Script Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
