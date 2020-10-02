@@ -54,9 +54,9 @@
                             <label>Type de Phrase</label>
                             <select class="form-control" id="type" onselect="getValueOfType()">
                                 <option value="" disabled selected></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="1">phrase à 1 trou</option>
+                                <option value="2">phrase à 2 trou</option>
+                                <option value="3">phrase à 3 trou</option>
                         </select>
                         </div>
                     </div>
@@ -79,13 +79,7 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <ul>
-                        <li id="phrase1"></li>
-                        <li id="phrase2"></li>
-                        <li id="phrase3"></li>
-                        <li id="phrase4"></li>
-                        <li id="phrase5"></li>
-                    </ul>
+                        <p id="phrase"></p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetTab()">fermer</button>

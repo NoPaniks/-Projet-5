@@ -4,3 +4,7 @@
 h1 {
     font-size: 15px !important;
 }
+img {
+    height: 100%;
+    width: 100%;
+}

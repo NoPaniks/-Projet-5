@@ -646,19 +646,16 @@ function laBelleBoucle(tableauFinal) {
         }
         return tableauFinal;  
 }
+function logArrayELements(element) {
+        document.getElementById('phrase').innerHTML += element + '<br><br>'
+}
 // fonction qui écrit tout là où sa doit l'être
 function launchPhrases() {
-        document.getElementById('phrase1').innerHTML = (laBelleBoucle(tabFinal)[0]);
-        document.getElementById('phrase2').innerHTML = (laBelleBoucle(tabFinal)[1]);
-        document.getElementById('phrase3').innerHTML = (laBelleBoucle(tabFinal)[2]);
-        document.getElementById('phrase4').innerHTML = (laBelleBoucle(tabFinal)[3]);
-        document.getElementById('phrase5').innerHTML = (laBelleBoucle(tabFinal)[4]);
+        laBelleBoucle(tabFinal).forEach(logArrayELements);
 }
-// fonction qui reset les champs dans la modal
+// fonction qui reset les champs dans la modal et qui vide le tableau
 function resetTab() {
+        document.getElementById('phrase').innerHTML = "";
         tabFinal = [];
         return tabFinal;
 }
-
-
-
