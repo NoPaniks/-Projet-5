@@ -598,25 +598,21 @@ const reponse = [
         "un 18 trous",
         "Hiroshima"
 ];
-//création des variables que je recup de la page WEB
-function getValueOfType() {
-        var gettype = document.getElementById("type").value;
-        alert(gettype);
-        return gettype;
-}
-function getValueOfNbre() {
-        var getnbre = document.getElementById("nbre").value;
-        alert(getnbre);
-        return getnbre;
-}
-var type = getValueOfType();
-var nbre = getValueOfNbre();
-
-
 // création tableau pour la fonction Final et l'intégration à la page web
-var tabFinal = [];
-
-// Déclarations des 3 fonctions :
+let tabFinal = [];
+// Déclarations des fonctions :
+function getValueOfType() {
+        var gettype = document.getElementById("type");
+        let choice = gettype.selectedIndex  // Récupération de l'index du <option> choisi
+        let valeur_cherchee = gettype.options[choice].value; // Récupération du texte du <option> d'index "choice"
+        return valeur_cherchee;
+} // fonction qui récupère le Type
+function getValueOfNbre() {
+        var getnbre = document.getElementById("nbre");
+        let choices = getnbre.selectedIndex  // Récupération de l'index du <option> choisi
+        let valeur_cherchees = getnbre.options[choices].value; // Récupération du texte du <option> d'index "choice"
+        return valeur_cherchees;
+} // fonction qui récupère le Nbre
 function getIndexRandomReponse() {
         indexRandomReponse = Math.floor((Math.random() * reponse.length));
         return indexRandomReponse;
@@ -626,7 +622,7 @@ function getIndexPhrase(typeTableau) {
         return indexPhrase;
 }//console.log(trou3[getIndexPhrase(trou3)]); => donne une phrase aléatoire dans le tableau 3 avec en paramètre la longueur du tableau 3
 function replace(typeTableau) {
-        var randomComplete =    (
+        let randomComplete =    (
                                         (
                                                 (typeTableau[getIndexPhrase(typeTableau)]).replace('___',reponse[getIndexRandomReponse()])
                                         ).replace('___',reponse[getIndexRandomReponse()])
@@ -634,53 +630,36 @@ function replace(typeTableau) {
         return randomComplete;
 } //console.log(replace(trou2)); => donne la phrase aléatoire du tableau trou2 complété par les réponses aléatoires de la fonction getIndexRandomReponse
 
-// fonction Principale
-function cPartiMonKiki(tableauFinal) {
-        if (type == 1) {
-                while (tableauFinal.length < nbre) {
+// fonction qui boucle par rapport à Type et Nombre
+function laBelleBoucle(tableauFinal) {
+        if (getValueOfType() == 1) {
+                while (tableauFinal.length < getValueOfNbre()) {
                         tableauFinal.push(replace(trou1));
                 }
-        } else if (type == 2) {
-                while (tableauFinal.length < nbre) {
+        } else if (getValueOfType() == 2) {
+                while (tableauFinal.length < getValueOfNbre()) {
                         tableauFinal.push(replace(trou2));
                 } 
-        } else if (type == 3) {
-                while (tableauFinal.length < nbre) {
+        } else if (getValueOfType() == 3) {
+                while (tableauFinal.length < getValueOfNbre()) {
                         tableauFinal.push(replace(trou3));
                 }
         }
         return tableauFinal;  
 }
-
-document.getElementById('phrase1').innerHTML = type;
-document.getElementById('phrase2').innerHTML = nbre;
-document.getElementById('phrase3').innerHTML = (cPartiMonKiki(tabFinal)[2]);
-document.getElementById('phrase4').innerHTML = (cPartiMonKiki(tabFinal)[3]);
-document.getElementById('phrase5').innerHTML = (cPartiMonKiki(tabFinal)[4]);
-
-
-
-
-
-
-/*
-Pour effectuer des tirages sans reprises, la function splice est très pratique.
-
-Elle permet d'extraire (ou d'ajouter) un ou plusieurs éléments consécutifs d'un tableau en précisant leur rang et nombre. Elle retourne un tableau et modifie, en conséquence, le tableau auquel elle est appliquée.
-
-Ainsi, il est facile de mélanger un jeu de cartes (symbolisé par la suite des 52 nombres entiers de 0 à 51*) de manière aléatoire en effectuant des tirages sans reprise jusqu'à épuisement du jeu initial :
-
-function newGame(){
-    var i,nbrElm,ini=[],game=[];
-    for (i=0;i<52;i++) ini[i]=i;
-    while (nbrElm=ini.length) game[game.length] = ini.splice(Math.floor(Math.random()*nbrElm),1)[0];
-    return game;
+// fonction qui écrit tout là où sa doit l'être
+function launchPhrases() {
+        document.getElementById('phrase1').innerHTML = (laBelleBoucle(tabFinal)[0]);
+        document.getElementById('phrase2').innerHTML = (laBelleBoucle(tabFinal)[1]);
+        document.getElementById('phrase3').innerHTML = (laBelleBoucle(tabFinal)[2]);
+        document.getElementById('phrase4').innerHTML = (laBelleBoucle(tabFinal)[3]);
+        document.getElementById('phrase5').innerHTML = (laBelleBoucle(tabFinal)[4]);
 }
- 
-// Utilisation
-var jeu=newGame();
-alert(jeu)
-Remarque : le contenu du while n'est pas une condition mais une affectation qui définit le nombre d'éléments restants utilisé ensuite pour le choix aléatoire du rang.
+// fonction qui reset les champs dans la modal
+function resetTab() {
+        tabFinal = [];
+        return tabFinal;
+}
 
-(*) Les couleurs et rangs des cartes seront alors déterminées par les valeurs des restes et quotients dans la division par 13.
-*/
+
+

@@ -42,7 +42,8 @@
                     <div class="row justify-content-around">
                         <div class="col-3">
                             <label>Nombre de Phrase</label>
-                            <select class="form-control" id="nbre" onchange="getValueOfNbre()">
+                            <select class="form-control" id="nbre" onselect="getValueOfNbre()">
+                                <option value="" disabled selected></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -50,19 +51,18 @@
                                 <option value="5">5</option>
                             </select>
                             <label>Type de Phrase</label>
-                            <select class="form-control" id="type" onchange="getValueOfType()">
+                            <select class="form-control" id="type" onselect="getValueOfType()">
+                                <option value="" disabled selected></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                            </select>
+                        </select>
                         </div>
                     </div>
                     <div class="row margin20 justify-content-around">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modalprojet" onclick="cPartiMonKiki(tableauFinal)">
-                            Générer
-                        </button>
-                        <button type="reset" class="btn btn-danger">Reset</button>
+                        <button id="appliquer" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modalprojet" onclick="launchPhrases()"> Générer </button>
+                        <button type="reset" class="btn btn-danger" onclick="reset()"> Reset </button>
                     </div>
                 </form>
             </div>
@@ -87,7 +87,7 @@
                     </ul>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="resetTab()">fermer</button>
                 </div>
             </div>
             </div>
@@ -97,10 +97,13 @@
 
     </footer>
     <!-- Script du projet 5 - réalisé par Sébastien GILBERT -->
-    <script src="tableau.js"></script>
+    <script type="text/javascript" src="tableau.js"></script>
     <!-- Script Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
+<!--
+
+-->
