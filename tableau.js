@@ -629,7 +629,6 @@ function replace(typeTableau) {
                                 ).replace('___',reponse[getIndexRandomReponse()]);
         return randomComplete;
 } //console.log(replace(trou2)); => donne la phrase aléatoire du tableau trou2 complété par les réponses aléatoires de la fonction getIndexRandomReponse
-
 // fonction qui boucle par rapport à Type et Nombre
 function laBelleBoucle(tableauFinal) {
         if (getValueOfType() == 1) {
