@@ -27,3 +27,8 @@ Adaptez le programme pour qu'il puisse offrir ces fonctionnalités. A vous de jo
 
 Livrables
 Fichiers à fournir : Code JavaScript du projet 
+
+                        Projet Bonus : 
+- Réalisation d'un générateur de citations aléatoire avec les cartes du jeux "Blanc Manger Coco"
+- Retrouvez toutes les possibilitées de phrases du célèbre jeux de carte de façon aléatoire ! 
+- Attention, certaines générations peuvent vous faire rire !
