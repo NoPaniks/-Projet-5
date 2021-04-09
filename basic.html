@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS perso de la page -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>PROJET 5 - Basic</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row title">
+                <h1>BASIC PROJECT</h1>
+            </div>
+            <div class="row lightBar">
+                <div class="halo"></div>
+            </div>
+            <div class="row choice">
+                <div class="form">
+                    <label>Type de Phrase</label>
+                        <select name="typeOfCitation" id="typeCitation">
+                            <option value="" disabled selected></option>
+                            <option value="1">Phrases de type1</option>
+                            <option value="2">Phrases de type2</option>
+                        </select>
+                    <label>Nombre de Phrase</label>
+                    <div class="input">
+                        <input id="nbrCitation" type="number"  maxlength="1" placeholder="1 à 5" min="1" max="5" required></input>
+                        <span class="validity"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="sentence">
+                <p id="citation"></p>
+            </div>
+            <div class="row button">
+                <button id="generate">Generate</button>
+                <button id="stop" onclick="window.location.href = 'index.html';">Stop</button>
+            </div>
+        </div>
+    </main>
+    <!-- Script du projet 5 - réalisé par Sébastien GILBERT -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/tab_basic.js"></script>
+    <script type="text/javascript" src="js/class_basic.js"></script>
+    <script type="text/javascript" src="js/main_basic.js"></script>
+</body>
+</html>
